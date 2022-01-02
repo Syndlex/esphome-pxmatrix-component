@@ -1,7 +1,5 @@
 #include "pxmatrix_display.h"
 #include "esphome/core/application.h"
-#include "esphome/core/helpers.h"
-#include "esphome/core/hal.h"
 
 #ifdef ESP8266
 
@@ -69,12 +67,12 @@ void PxmatrixDisplay::setup() {
 }
 
 void HOT PxmatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {
-  uint16_t matrix_color = color.to_bgr_565();
+  uint16_t matrix_color = display::ColorUtil::color_to_565(color, ColorOrder::COLOR_ORDER_BGR);
   this->px_matrix_->drawPixelRGB565(x, y, matrix_color);
 }
 
 void PxmatrixDisplay::fill(Color color) {
-  uint16_t matrix_color = color.to_bgr_565();
+  uint16_t matrix_color = display::ColorUtil::color_to_565(color, ColorOrder::COLOR_ORDER_BGR);
   this->px_matrix_->fillScreen(matrix_color);
 }
 
