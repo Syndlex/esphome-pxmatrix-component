@@ -2,15 +2,38 @@
 #include "esphome/core/application.h"
 #include "esphome/core/helpers.h"
 #include "esphome/core/log.h"
+
+#ifdef ESP8266
+
 #include <Ticker.h>
+
+#endif
 
 static const char *TAG = "pxmatrix_display";
 
 namespace esphome {
 namespace pxmatrix_display {
 
-Ticker display_ticker;
-PxMATRIX *pxMatrix;
+
+  PxMATRIX *pxMatrix;
+
+  #ifdef ESP32
+  hw_timer_t * timer = NULL;
+  portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
+
+  void IRAM_ATTR display_updater(){
+    // Increment the counter and set the time of ISR
+    portENTER_CRITICAL_ISR(&timerMux);
+    display.display(20);
+    portEXIT_CRITICAL_ISR(&timerMux);
+  }
+  #endif
+
+  #ifdef ESP8266
+  Ticker display_ticker;
+  #endif
+
+
 void display_updater() { pxMatrix->display(); }
 
 void PxmatrixDisplay::setup() {
@@ -30,8 +53,19 @@ void PxmatrixDisplay::setup() {
   this->px_matrix_->setMuxDelay(mux_delay_, mux_delay_, mux_delay_, mux_delay_, mux_delay_);
   this->px_matrix_->setRotate(rotate_);
   this->px_matrix_->setFlip(flip_);
-  display_ticker.attach(0.004, display_updater);
   ESP_LOGI(TAG, "Finished Setup");
+
+  #ifdef ESP8266
+    display_ticker.attach(0.004, display_updater);
+  #endif
+
+  #ifdef ESP32
+    timer = timerBegin(0, 80, true);
+    timerAttachInterrupt(timer, &display_updater, true);
+    timerAlarmWrite(timer, 4000, true);
+    timerAlarmEnable(timer);
+  #endif
+
 }
 
 void HOT PxmatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {

@@ -155,4 +155,5 @@ def to_code(config):
     cg.add_library("13", "1.10.12")
     cg.add_library("Wire", "1.0")
     cg.add_library("Spi", "1.0")
+    cg.add_library("Ticker", "1.0")
     cg.add_library("Adafruit BusIO", "1.9.9")
