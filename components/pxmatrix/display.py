@@ -2,15 +2,25 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome import pins
 from esphome.components import display
-from esphome.const import CONF_WIDTH, CONF_HEIGHT, CONF_MULTIPLEXER_DELAY, \
+from esphome.const import CONF_WIDTH, \
     CONF_ID, CONF_LAMBDA, CONF_PAGES, CONF_BRIGHTNESS, CONF_RGB_ORDER, \
-    CONF_PIN_A, CONF_PIN_B, CONF_PIN_C, CONF_PIN_D, CONF_PIN_E, CONF_PIN_OE, CONF_PIN_LATCH, \
-    CONF_CHIPSET, CONF_MULTIPLEXER, CONF_SCAN_PATTERN, CONF_ROW_PATTERN, \
-    CONF_ROTATE, CONF_FLIP
+    CONF_PIN_A, CONF_PIN_B, CONF_PIN_C, CONF_PIN_D, \
+    CONF_CHIPSET, CONF_MULTIPLEXER
 
 pxmatrix_ns = cg.esphome_ns.namespace('pxmatrix_display')
 
 pxmatrix_gpio = pxmatrix_ns.class_('PxmatrixDisplay', cg.PollingComponent, display.DisplayBuffer)
+
+# new Consts
+CONF_MULTIPLEXER_DELAY = "multiplexer_delay"
+CONF_PIN_E = 'pin_e'
+CONF_PIN_LATCH = 'pin_latch'
+CONF_PIN_OE = 'pin_oe'
+CONF_HEIGHT = 'height'
+CONF_FLIP = 'flip'
+CONF_ROTATE = 'rotate'
+CONF_ROW_PATTERN = 'row_pattern'
+CONF_SCAN_PATTERN = 'scan_pattern'
 
 DriverChips = pxmatrix_ns.enum('DriverChips')
 DRIVER_CHIPS = {
