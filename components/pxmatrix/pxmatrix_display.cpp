@@ -1,5 +1,6 @@
 #include "pxmatrix_display.h"
 #include "esphome/core/application.h"
+#include "esphome/components/display/display_color_utils.h"
 
 #ifdef ESP8266
 
