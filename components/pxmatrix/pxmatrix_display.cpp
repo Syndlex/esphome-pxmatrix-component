@@ -86,19 +86,19 @@ void PxmatrixDisplay::update() {
 
 void HOT PxmatrixDisplay::display() {}
 
-void PxmatrixDisplay::set_pin_latch(GPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
+void PxmatrixDisplay::set_pin_latch(InternalGPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
 
-void PxmatrixDisplay::set_pin_a(GPIOPin *pin_a) { this->pin_a_ = pin_a; }
+void PxmatrixDisplay::set_pin_a(InternalGPIOPin *pin_a) { this->pin_a_ = pin_a; }
 
-void PxmatrixDisplay::set_pin_b(GPIOPin *pin_b) { this->pin_b_ = pin_b; }
+void PxmatrixDisplay::set_pin_b(InternalGPIOPin *pin_b) { this->pin_b_ = pin_b; }
 
-void PxmatrixDisplay::set_pin_c(GPIOPin *pin_c) { this->pin_c_ = pin_c; }
+void PxmatrixDisplay::set_pin_c(InternalGPIOPin *pin_c) { this->pin_c_ = pin_c; }
 
-void PxmatrixDisplay::set_pin_d(GPIOPin *pin_d) { this->pin_d_ = pin_d; }
+void PxmatrixDisplay::set_pin_d(InternalGPIOPin *pin_d) { this->pin_d_ = pin_d; }
 
-void PxmatrixDisplay::set_pin_e(GPIOPin *pin_e) { this->pin_e_ = pin_e; }
+void PxmatrixDisplay::set_pin_e(InternalGPIOPin *pin_e) { this->pin_e_ = pin_e; }
 
-void PxmatrixDisplay::set_pin_oe(GPIOPin *pin_oe) { this->pin_oe_ = pin_oe; }
+void PxmatrixDisplay::set_pin_oe(InternalGPIOPin *pin_oe) { this->pin_oe_ = pin_oe; }
 
 void PxmatrixDisplay::set_width(uint8_t width) { this->width_ = width; }
 
