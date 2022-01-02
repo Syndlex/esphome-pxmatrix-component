@@ -44,13 +44,13 @@ class PxmatrixDisplay : public PollingComponent, public display::DisplayBuffer {
   void update() override;
   void fill(Color color) override;
 
-  void set_pin_latch(GPIOPin *pin_latch);
-  void set_pin_a(GPIOPin *pin_a);
-  void set_pin_b(GPIOPin *pin_b);
-  void set_pin_c(GPIOPin *pin_c);
-  void set_pin_d(GPIOPin *pin_d);
-  void set_pin_e(GPIOPin *pin_e);
-  void set_pin_oe(GPIOPin *pin_oe);
+  void set_pin_latch(InternalGPIOPin *pin_latch);
+  void set_pin_a(InternalGPIOPin *pin_a);
+  void set_pin_b(InternalGPIOPin *pin_b);
+  void set_pin_c(InternalGPIOPin *pin_c);
+  void set_pin_d(InternalGPIOPin *pin_d);
+  void set_pin_e(InternalGPIOPin *pin_e);
+  void set_pin_oe(InternalGPIOPin *pin_oe);
   void set_width(uint8_t width);
   void set_height(uint8_t height);
   void set_brightness(uint8_t brightness);
@@ -74,13 +74,13 @@ class PxmatrixDisplay : public PollingComponent, public display::DisplayBuffer {
 
   HighFrequencyLoopRequester high_freq_;
 
-  GPIOPin *pin_latch_{nullptr};
-  GPIOPin *pin_a_{nullptr};
-  GPIOPin *pin_b_{nullptr};
-  GPIOPin *pin_c_{nullptr};
-  GPIOPin *pin_d_{nullptr};
-  GPIOPin *pin_e_{nullptr};
-  GPIOPin *pin_oe_{nullptr};
+  InternalGPIOPin *pin_latch_{nullptr};
+  InternalGPIOPin *pin_a_{nullptr};
+  InternalGPIOPin *pin_b_{nullptr};
+  InternalGPIOPin *pin_c_{nullptr};
+  InternalGPIOPin *pin_d_{nullptr};
+  InternalGPIOPin *pin_e_{nullptr};
+  InternalGPIOPin *pin_oe_{nullptr};
 
   uint8_t width_ = 32;
   uint8_t height_ = 32;
