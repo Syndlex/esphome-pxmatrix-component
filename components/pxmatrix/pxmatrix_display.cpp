@@ -1,7 +1,7 @@
 #include "pxmatrix_display.h"
 #include "esphome/core/application.h"
 #include "esphome/core/helpers.h"
-#include "esphome/core/log.h"
+#include "esphome/core/hal.h"
 
 #ifdef ESP8266
 
