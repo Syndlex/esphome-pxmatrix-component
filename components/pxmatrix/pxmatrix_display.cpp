@@ -2,7 +2,6 @@
 #include "esphome/core/application.h"
 #include "esphome/core/helpers.h"
 #include "esphome/core/log.h"
-#include "esphome/core/gpio.h"
 
 #ifdef ESP8266
 

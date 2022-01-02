@@ -4,6 +4,7 @@
 #include "esphome/components/display/display_buffer.h"
 #include "esphome/core/log.h"
 #include "esphome/core/gpio.h"
+#include "esphome/core/color.h"
 
 #define PxMATRIX_double_buffer true
 
