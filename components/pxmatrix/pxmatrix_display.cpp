@@ -34,7 +34,7 @@ namespace pxmatrix_display {
 
 void display_updater() { pxMatrix->display(); }
 
-float WaveshareEPaper::get_setup_priority() const { return setup_priority::PROCESSOR; }
+float PxmatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
 
 void PxmatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
