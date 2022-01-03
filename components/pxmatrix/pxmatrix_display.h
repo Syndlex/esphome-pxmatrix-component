@@ -44,6 +44,7 @@ enum MuxPatterns {
 class PxmatrixDisplay : public PollingComponent, public display::DisplayBuffer {
  public:
   void display();
+  float get_setup_priority() const override;
   void setup() override;
   void update() override;
   void fill(Color color) override;
