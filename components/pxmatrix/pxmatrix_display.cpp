@@ -55,16 +55,16 @@ void PxmatrixDisplay::setup() {
   this->px_matrix_->setFlip(flip_);
   ESP_LOGI(TAG, "Finished Setup");
 
-  // #ifdef ESP8266
-  //   display_ticker.attach(0.004, display_updater);
-  // #endif
+  #ifdef ESP8266
+    display_ticker.attach(0.004, display_updater);
+  #endif
 
-  // #ifdef ESP32
-  //   timer = timerBegin(0, 80, true);
-  //   timerAttachInterrupt(timer, &display_updater, true);
-  //   timerAlarmWrite(timer, 4000, true);
-  //   timerAlarmEnable(timer);
-  // #endif
+  #ifdef ESP32
+    timer = timerBegin(0, 80, true);
+    timerAttachInterrupt(timer, &display_updater, true);
+    timerAlarmWrite(timer, 4000, true);
+    timerAlarmEnable(timer);
+  #endif
 
 }
 
