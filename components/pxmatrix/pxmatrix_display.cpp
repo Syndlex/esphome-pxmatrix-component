@@ -22,7 +22,7 @@ namespace pxmatrix_display {
   void IRAM_ATTR display_updater(){
     // Increment the counter and set the time of ISR
     portENTER_CRITICAL_ISR(&timerMux);
-    display.display(20);
+    display.display(8000);
     portEXIT_CRITICAL_ISR(&timerMux);
   }
   #endif
@@ -56,7 +56,7 @@ void PxmatrixDisplay::setup() {
   ESP_LOGI(TAG, "Finished Setup");
 
   #ifdef ESP8266
-    display_ticker.attach(0.006, display_updater);
+    display_ticker.attach(0.020, display_updater);
   #endif
 
   #ifdef ESP32
