@@ -1,6 +1,8 @@
 #include "pxmatrix_display.h"
 #include "esphome/core/application.h"
 
+#define PxMATRIX_SPI_FREQUENCY 5000000
+
 #ifdef ESP8266
 
 #include <Ticker.h>
