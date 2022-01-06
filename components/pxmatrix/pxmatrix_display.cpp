@@ -1,8 +1,6 @@
 #include "pxmatrix_display.h"
 #include "esphome/core/application.h"
 
-#define PxMATRIX_SPI_FREQUENCY 5000000
-
 #ifdef ESP8266
 
 #include <Ticker.h>
@@ -20,13 +18,6 @@ namespace pxmatrix_display {
   #ifdef ESP32
   hw_timer_t * timer = NULL;
   portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
-
-  void IRAM_ATTR display_updater(){
-    // Increment the counter and set the time of ISR
-    portENTER_CRITICAL_ISR(&timerMux);
-    display.display(8000);
-    portEXIT_CRITICAL_ISR(&timerMux);
-  }
   #endif
 
   #ifdef ESP8266
@@ -34,7 +25,7 @@ namespace pxmatrix_display {
   #endif
 
 
-void display_updater() { pxMatrix->display(); }
+void display_updater() { pxMatrix->display(4000); }
 
 float PxmatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
 
