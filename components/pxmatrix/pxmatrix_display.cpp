@@ -25,7 +25,7 @@ namespace pxmatrix_display {
   #endif
 
 
-void display_updater() { pxMatrix->display(400); }
+void display_updater() { pxMatrix->display(300); }
 
 float PxmatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
 
@@ -49,7 +49,7 @@ void PxmatrixDisplay::setup() {
   ESP_LOGI(TAG, "Finished Setup");
 
   #ifdef ESP8266
-    display_ticker.attach(0.020, display_updater);
+    display_ticker.attach(0.015, display_updater);
   #endif
 
   #ifdef ESP32
