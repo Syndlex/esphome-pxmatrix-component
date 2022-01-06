@@ -61,8 +61,8 @@ ROW_PATTERNS = {64, 32, 16, 8, 4, 2}
 CONFIG_SCHEMA = cv.All(
     display.FULL_DISPLAY_SCHEMA.extend({
         cv.GenerateID(): cv.declare_id(pxmatrix_gpio),
-        cv.Optional(CONF_WIDTH, default="32"): cv.uint8_t,
-        cv.Optional(CONF_HEIGHT, default="32"): cv.uint8_t,
+        cv.Optional(CONF_WIDTH, default="64"): cv.uint8_t,
+        cv.Optional(CONF_HEIGHT, default="64"): cv.uint8_t,
         cv.Optional(CONF_ROTATE, default=False): cv.boolean,
         cv.Optional(CONF_FLIP, default=False): cv.boolean,
         cv.Optional(CONF_BRIGHTNESS, default="255"): cv.uint8_t,
