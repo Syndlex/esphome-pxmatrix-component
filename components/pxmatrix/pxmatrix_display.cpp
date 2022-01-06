@@ -25,7 +25,7 @@ namespace pxmatrix_display {
   #endif
 
 
-void display_updater() { pxMatrix->display(40); }
+void display_updater() { pxMatrix->display(50); }
 
 float PxmatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
 
