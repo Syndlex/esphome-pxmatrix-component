@@ -49,7 +49,7 @@ void PxmatrixDisplay::setup() {
   ESP_LOGI(TAG, "Finished Setup");
 
   #ifdef ESP8266
-    display_ticker.attach(0.011, display_updater);
+    display_ticker.attach(0.009, display_updater);
   #endif
 
   #ifdef ESP32
