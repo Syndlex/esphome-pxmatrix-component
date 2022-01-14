@@ -147,7 +147,7 @@ def to_code(config):
     # if CONF_MULTIPLEXER_DELAY in config:
     #     cg.add(var.set_mux_delay(config[CONF_MULTIPLEXER_DELAY]))
 
-    # https://github.com/2dom/PxMatrix/blob/master/PxMatrix.h
-    cg.add_library("mrfaptastic/ESP32 HUB75 LED MATRIX PANEL DMA Display", "2.0.6")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
     cg.add_library("adafruit/Adafruit GFX Library", "1.10.12")
+    # https://github.com/2dom/PxMatrix/blob/master/PxMatrix.h
+    cg.add_library("mrfaptastic/ESP32 HUB75 LED MATRIX PANEL DMA Display", "2.0.6")
