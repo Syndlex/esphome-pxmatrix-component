@@ -49,6 +49,7 @@ void DmaMatrixDisplay::setup() {
   dmamatrix->begin();
   dmamatrix->setBrightness8(255); //0-255
   dmamatrix->clearScreen();
+  this->dma_matrix_->fillScreen(0xFFFF);
   ESP_LOGI(TAG, "Finished Setup");
 }
 
@@ -63,7 +64,6 @@ void DmaMatrixDisplay::fill(Color color) {
 }
 
 void DmaMatrixDisplay::update() {
-  this->do_update_();
 }
 
 void HOT DmaMatrixDisplay::display() {}
