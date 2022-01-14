@@ -10,7 +10,7 @@
 #include <ESP32-HUB75-MatrixPanel-I2S-DMA.h>  // NOLINT
 
 namespace esphome {
-namespace DmaMatrixDisplay {
+namespace dmamatrix_display {
 
 // enum DriverChips {
 //   SHIFT = driver_chips::SHIFT,
@@ -38,7 +38,7 @@ namespace DmaMatrixDisplay {
 //   STRAIGHT = mux_patterns::STRAIGHT,
 // };
 
-class dmamatrixDisplay : public PollingComponent, public display::DisplayBuffer {
+class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer {
  public:
   void display();
   float get_setup_priority() const override;

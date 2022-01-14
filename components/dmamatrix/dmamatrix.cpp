@@ -33,9 +33,9 @@ MatrixPanel_I2S_DMA *dmamatrix = nullptr;
 
 void display_updater() {  }
 
-float dmamatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
+float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
 
-void dmamatrixDisplay::setup() {
+void DmaMatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
   HUB75_I2S_CFG::i2s_pins _pins={R1_PIN, G1_PIN, B1_PIN, R2_PIN, G2_PIN, B2_PIN, A_PIN, B_PIN, C_PIN, D_PIN, E_PIN, LAT_PIN, OE_PIN, CLK_PIN};
   HUB75_I2S_CFG mxconfig(
@@ -57,21 +57,21 @@ void dmamatrixDisplay::setup() {
   ESP_LOGI(TAG, "Finished Setup");
 }
 
-void HOT dmamatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {
+void HOT DmaMatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color, display::ColorOrder::COLOR_ORDER_BGR);
   this->dma_matrix_->drawPixel(x, y, matrix_color);
 }
 
-void dmamatrixDisplay::fill(Color color) {
+void DmaMatrixDisplay::fill(Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color,  display::ColorOrder::COLOR_ORDER_BGR);
   this->dma_matrix_->fillScreen(matrix_color);
 }
 
-void dmamatrixDisplay::update() {
+void DmaMatrixDisplay::update() {
   this->do_update_();
 }
 
-void HOT dmamatrixDisplay::display() {}
+void HOT DmaMatrixDisplay::display() {}
 
 // void dmamatrixDisplay::set_pin_latch(InternalGPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
 
