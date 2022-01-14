@@ -62,12 +62,7 @@ def to_code(config):
 
     yield cg.register_component(var, config)
     yield display.register_display(var, config)
-
-    cg.add(var.set_color_orders(config[CONF_RGB_ORDER]))
-    cg.add(var.set_mux_patterns(config[CONF_MULTIPLEXER]))
-    cg.add(var.set_scan_patterns(config[CONF_SCAN_PATTERN]))
-    cg.add(var.set_driver_chips(config[CONF_CHIPSET]))
-
+    
     if CONF_PIN_LATCH in config:
         latch = yield cg.gpio_pin_expression(config[CONF_PIN_LATCH])
         cg.add(var.set_pin_latch(latch))
