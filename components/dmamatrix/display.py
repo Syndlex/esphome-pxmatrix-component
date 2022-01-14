@@ -7,7 +7,6 @@ from esphome.const import CONF_WIDTH, \
     CONF_PIN_A, CONF_PIN_B, CONF_PIN_C, CONF_PIN_D, \
     CONF_CHIPSET, CONF_MULTIPLEXER
 
-DEPENDENCIES = ["i2c"]
 
 pxmatrix_ns = cg.esphome_ns.namespace('dmamatrix_display')
 
@@ -149,6 +148,8 @@ def to_code(config):
     # if CONF_MULTIPLEXER_DELAY in config:
     #     cg.add(var.set_mux_delay(config[CONF_MULTIPLEXER_DELAY]))
 
+
+    cg.add_library("Wire", "1.0")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
     cg.add_library("adafruit/Adafruit GFX Library", "1.10.12")
     # https://github.com/2dom/PxMatrix/blob/master/PxMatrix.h
