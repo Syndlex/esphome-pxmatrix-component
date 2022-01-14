@@ -37,7 +37,7 @@ void DmaMatrixDisplay::setup() {
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dmamatrix = this->dma_matrix_;
   dmamatrix->begin();
-  dmamatrix->setBrightness8(255); //0-255
+  dmamatrix->setBrightness8(this->brightness_); //0-255
   dmamatrix->clearScreen();
   ESP_LOGI(TAG, "Finished Setup");
 }
