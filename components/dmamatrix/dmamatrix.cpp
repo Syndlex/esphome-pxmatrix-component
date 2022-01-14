@@ -45,7 +45,7 @@ void DmaMatrixDisplay::setup() {
       _pins // pin mapping
     );
 
-  mxconfig.driver = HUB75_I2S_CFG::FM6126;
+  mxconfig.driver = HUB75_I2S_CFG::FM6124;
   
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dmamatrix = this->dma_matrix_;
