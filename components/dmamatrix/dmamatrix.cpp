@@ -60,7 +60,7 @@ void HOT DmaMatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color colo
 void DmaMatrixDisplay::fill(Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color,  display::ColorOrder::COLOR_ORDER_BGR);
   
-  ESP_LOGI(TAG, matrix_color);
+  ESP_LOGI(TAG, "Drawing Fill Screen %d", matrix_color );
   this->dma_matrix_->fillScreen(matrix_color);
 }
 
