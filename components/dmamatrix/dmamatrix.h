@@ -12,31 +12,31 @@
 namespace esphome {
 namespace dmamatrix_display {
 
-enum DriverChips {
-  SHIFT = driver_chips::SHIFT,
-  FM6124 = driver_chips::FM6124,
-  FM6126A = driver_chips::FM6126A,
-};
-enum ColorOrders {
-  RRGGBB = color_orders::RRGGBB,
-  RRBBGG = color_orders::RRBBGG,
-  GGRRBB = color_orders::GGRRBB,
-  GGBBRR = color_orders::GGBBRR,
-  BBRRGG = color_orders::BBRRGG,
-  BBGGRR = color_orders::BBGGRR,
-};
-enum ScanPatterns {
-  LINE = scan_patterns::LINE,
-  ZIGZAG = scan_patterns::ZIGZAG,
-  VZAG = scan_patterns::VZAG,
-  WZAGZIG = scan_patterns::WZAGZIG,
-  ZAGGIZ = scan_patterns::ZAGGIZ,
-  ZZAGG = scan_patterns::ZZAGG,
-};
-enum MuxPatterns {
-  BINARY = mux_patterns::BINARY,
-  STRAIGHT = mux_patterns::STRAIGHT,
-};
+// enum DriverChips {
+//   SHIFT = driver_chips::SHIFT,
+//   FM6124 = driver_chips::FM6124,
+//   FM6126A = driver_chips::FM6126A,
+// };
+// enum ColorOrders {
+//   RRGGBB = color_orders::RRGGBB,
+//   RRBBGG = color_orders::RRBBGG,
+//   GGRRBB = color_orders::GGRRBB,
+//   GGBBRR = color_orders::GGBBRR,
+//   BBRRGG = color_orders::BBRRGG,
+//   BBGGRR = color_orders::BBGGRR,
+// };
+// enum ScanPatterns {
+//   LINE = scan_patterns::LINE,
+//   ZIGZAG = scan_patterns::ZIGZAG,
+//   VZAG = scan_patterns::VZAG,
+//   WZAGZIG = scan_patterns::WZAGZIG,
+//   ZAGGIZ = scan_patterns::ZAGGIZ,
+//   ZZAGG = scan_patterns::ZZAGG,
+// };
+// enum MuxPatterns {
+//   BINARY = mux_patterns::BINARY,
+//   STRAIGHT = mux_patterns::STRAIGHT,
+// };
 
 class dmamatrixDisplay : public PollingComponent, public display::DisplayBuffer {
  public:
@@ -90,10 +90,10 @@ class dmamatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   bool rotate_ = false;
   bool flip_ = false;
 
-  DriverChips driver_chips_;
-  ColorOrders color_orders_;
-  ScanPatterns scan_patterns_;
-  MuxPatterns mux_patterns_;
+  // DriverChips driver_chips_;
+  // ColorOrders color_orders_;
+  // ScanPatterns scan_patterns_;
+  // MuxPatterns mux_patterns_;
   // block_patterns BLOCK_PATTERN = block_patterns::ABCD;
 };
 
