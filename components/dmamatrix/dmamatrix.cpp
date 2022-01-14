@@ -109,9 +109,9 @@ void HOT DmaMatrixDisplay::display() {}
 
 // void dmamatrixDisplay::set_flip(bool flip) { this->flip_ = flip; }
 
-// int dmamatrixDisplay::get_width_internal() { return this->width_; }
+int dmamatrixDisplay::get_width_internal() { return this->width_; }
 
-// int dmamatrixDisplay::get_height_internal() { return this->height_; }
+int dmamatrixDisplay::get_height_internal() { return this->height_; }
 
 }  // namespace dmamatrix_display
 }  // namespace esphome
