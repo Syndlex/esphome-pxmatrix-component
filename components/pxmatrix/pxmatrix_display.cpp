@@ -1,4 +1,4 @@
-#include "pxmatrix_display.h"
+#include "pxmatrix.h"
 #include "esphome/core/application.h"
 
 

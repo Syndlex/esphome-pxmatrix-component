@@ -1,4 +1,4 @@
-#include "dmamatrix_display.h"
+#include "dmamatrix.h"
 #include "esphome/core/application.h"
 
 #define R1_PIN 17
