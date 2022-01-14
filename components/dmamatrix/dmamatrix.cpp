@@ -16,7 +16,6 @@
 #define OE_PIN 32
 #define CLK_PIN 25
 
-#define SERIAL_DEBUG 1
 
 static const char *TAG = "dmamatrix_display";
 
