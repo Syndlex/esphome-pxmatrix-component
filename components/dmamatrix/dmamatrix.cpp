@@ -20,9 +20,9 @@ float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROC
 void DmaMatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
   HUB75_I2S_CFG::i2s_pins _pins={
-    this->pin_r1_, this->pin_g1_, this->pin_b1_, this->pin_r2_, this->pin_g2_, 
-    this->pin_b2_, this->pin_a_ , this->pin_b_, this->pin_c_, this->pin_d_, 
-    this->pin_e_ , this->pin_latch_ ,this->pin_oe_ ,this->pin_clk_ };
+    pin_r1_->get_pin(), pin_g1_->get_pin(), pin_b1_->get_pin(), pin_r2_->get_pin(), pin_g2_->get_pin(), 
+    pin_b2_->get_pin(), pin_a_->get_pin() , pin_b_->get_pin(), pin_c_->get_pin(), pin_d_->get_pin(), 
+    pin_e_->get_pin() , pin_latch_->get_pin() ,pin_oe_->get_pin() ,pin_clk_->get_pin() };
   HUB75_I2S_CFG mxconfig(
       width_,   // module width
       height_,   // module height
