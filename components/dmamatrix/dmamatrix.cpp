@@ -46,13 +46,14 @@ void DmaMatrixDisplay::setup() {
       HUB75_I2S_CFG::FM6124,
       true
     );
+
+  mxconfig.clkphase = false;
  
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dmamatrix = this->dma_matrix_;
   dmamatrix->begin();
   dmamatrix->setBrightness8(255); //0-255
   dmamatrix->clearScreen();
-  dmamatrix->fillScreen(0xFFFF);
   ESP_LOGI(TAG, "Finished Setup");
 }
 
