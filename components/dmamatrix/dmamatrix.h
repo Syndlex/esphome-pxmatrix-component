@@ -7,10 +7,7 @@
 #include "esphome/core/color.h"
 #include "esphome/components/display/display_color_utils.h"
 
-
-#define dmamatrix_double_buffer true
-
-#include <dmamatrix.h>  // NOLINT
+#include <ESP32-HUB75-MatrixPanel-I2S-DMA.h>  // NOLINT
 
 namespace esphome {
 namespace dmamatrix_display {
