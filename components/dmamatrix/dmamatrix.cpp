@@ -48,7 +48,7 @@ void dmamatrixDisplay::setup() {
   mxconfig.driver = HUB75_I2S_CFG::FM6126A
   
 
-  this->dma_dmamatrix_ = new MatrixPanel_I2S_DMA(mxconfig);
+  this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dmamatrix = this->dma_matrix_;
   dmamatrix->begin();
   dmamatrix->setBrightness8(90); //0-255
@@ -69,7 +69,6 @@ void dmamatrixDisplay::fill(Color color) {
 
 void dmamatrixDisplay::update() {
   this->do_update_();
-  this->dma_matrix_->showBuffer();
 }
 
 void HOT dmamatrixDisplay::display() {}
