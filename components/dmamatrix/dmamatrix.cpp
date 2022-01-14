@@ -42,12 +42,11 @@ void dmamatrixDisplay::setup() {
       width_,   // module width
       height_,   // module height
       1,    // Chain length
-      _pins, // pin mapping
+      _pins // pin mapping
     );
 
-  mxconfig.driver = HUB75_I2S_CFG::FM6126A
+  mxconfig.driver = HUB75_I2S_CFG::FM6126A;
   
-
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dmamatrix = this->dma_matrix_;
   dmamatrix->begin();
