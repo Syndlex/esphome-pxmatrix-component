@@ -9,7 +9,7 @@ from esphome.const import CONF_WIDTH, \
 
 pxmatrix_ns = cg.esphome_ns.namespace('dmamatrix_display')
 
-pxmatrix_gpio = pxmatrix_ns.class_('dmamatrix_display', cg.PollingComponent, display.DisplayBuffer)
+pxmatrix_gpio = pxmatrix_ns.class_('DmaMatrixDisplay', cg.PollingComponent, display.DisplayBuffer)
 
 # new Consts
 CONF_MULTIPLEXER_DELAY = "multiplexer_delay"

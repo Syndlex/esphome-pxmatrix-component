@@ -25,7 +25,7 @@
 static const char *TAG = "dmamatrix_display";
 
 namespace esphome {
-namespace dmamatrix_display {
+namespace DmaMatrixDisplay {
 
 MatrixPanel_I2S_DMA *dmamatrix = nullptr;
 
