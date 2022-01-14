@@ -13,6 +13,7 @@ pxmatrix_ns = cg.esphome_ns.namespace('dmamatrix_display')
 pxmatrix_gpio = pxmatrix_ns.class_('DmaMatrixDisplay', cg.PollingComponent, display.DisplayBuffer)
 
 # new Consts
+CONF_HEIGHT = 'height'
 CONF_PIN_E = 'pin_e'
 CONF_PIN_LATCH = 'pin_latch'
 CONF_PIN_OE = 'pin_oe'
