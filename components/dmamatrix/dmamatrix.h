@@ -12,11 +12,6 @@
 namespace esphome {
 namespace dmamatrix_display {
 
-enum DriverChips {
-  FM6124 = driver_chips::FM6124,
-  FM6126A = driver_chips::FM6126A,
-};
-
 
 class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer {
  public:
