@@ -48,8 +48,8 @@ void dmamatrixDisplay::setup() {
   mxconfig.driver = HUB75_I2S_CFG::FM6126A
   
 
-  this->px_dmamatrix_ = new MatrixPanel_I2S_DMA(mxconfig);
-  dmamatrix = this->px_matrix_;
+  this->dma_dmamatrix_ = new MatrixPanel_I2S_DMA(mxconfig);
+  dmamatrix = this->dma_matrix_;
   dmamatrix->begin();
   dmamatrix->setBrightness8(90); //0-255
   dmamatrix->clearScreen();
@@ -59,17 +59,17 @@ void dmamatrixDisplay::setup() {
 
 void HOT dmamatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color, display::ColorOrder::COLOR_ORDER_BGR);
-  this->px_matrix_->drawPixelRGB565(x, y, matrix_color);
+  this->dma_matrix_->drawPixelRGB565(x, y, matrix_color);
 }
 
 void dmamatrixDisplay::fill(Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color,  display::ColorOrder::COLOR_ORDER_BGR);
-  this->px_matrix_->fillScreen(matrix_color);
+  this->dma_matrix_->fillScreen(matrix_color);
 }
 
 void dmamatrixDisplay::update() {
   this->do_update_();
-  this->px_matrix_->showBuffer();
+  this->dma_matrix_->showBuffer();
 }
 
 void HOT dmamatrixDisplay::display() {}

@@ -72,9 +72,7 @@ class dmamatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   int get_width_internal() override;
   int get_height_internal() override;
 
-  dmamatrix *px_dmamatrix_ ;
-
-  HighFrequencyLoopRequester high_freq_;
+  dmamatrix *dma_matrix_ ;
 
   InternalGPIOPin *pin_latch_{nullptr};
   InternalGPIOPin *pin_a_{nullptr};
