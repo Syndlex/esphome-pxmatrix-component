@@ -149,6 +149,7 @@ def to_code(config):
     #     cg.add(var.set_mux_delay(config[CONF_MULTIPLEXER_DELAY]))
 
 
+    cg.add_library("Adafruit BusIO", "1.10.1")
     cg.add_library("Wire", "1.0")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
     cg.add_library("adafruit/Adafruit GFX Library", "1.10.12")
