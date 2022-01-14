@@ -9,10 +9,6 @@ static const char *TAG = "dmamatrix_display";
 namespace esphome {
 namespace dmamatrix_display {
 
-MatrixPanel_I2S_DMA *dmamatrix = nullptr;
-
-
-
 void display_updater() {  }
 
 float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
@@ -35,10 +31,9 @@ void DmaMatrixDisplay::setup() {
   mxconfig.clkphase = false;
  
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
-  dmamatrix = this->dma_matrix_;
-  dmamatrix->begin();
-  dmamatrix->setBrightness8(this->brightness_); //0-255
-  dmamatrix->clearScreen();
+  dma_matrix_->begin();
+  dma_matrix_->setBrightness8(this->brightness_); //0-255
+  dma_matrix_->clearScreen();
   ESP_LOGI(TAG, "Finished Setup");
 }
 
