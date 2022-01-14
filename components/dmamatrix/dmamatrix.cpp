@@ -49,7 +49,6 @@ void DmaMatrixDisplay::setup() {
   dmamatrix->begin();
   dmamatrix->setBrightness8(255); //0-255
   dmamatrix->clearScreen();
-  this->dma_matrix_->fillScreen(0xFFFF);
   ESP_LOGI(TAG, "Finished Setup");
 }
 
@@ -60,10 +59,13 @@ void HOT DmaMatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color colo
 
 void DmaMatrixDisplay::fill(Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color,  display::ColorOrder::COLOR_ORDER_BGR);
+  
+  ESP_LOGI(TAG, "Drawing Fill Screen");
   this->dma_matrix_->fillScreen(matrix_color);
 }
 
 void DmaMatrixDisplay::update() {
+  this->do_update_();
 }
 
 void HOT DmaMatrixDisplay::display() {}
