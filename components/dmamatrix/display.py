@@ -42,7 +42,7 @@ CONFIG_SCHEMA = cv.All(
         cv.Optional(CONF_PIN_R1  , default="GPIO17"): pins.gpio_output_pin_schema,
         cv.Optional(CONF_PIN_G1  , default="GPIO2"):  pins.gpio_output_pin_schema,
         cv.Optional(CONF_PIN_B1  , default="GPIO16"): pins.gpio_output_pin_schema,
-        cv.Optional(CONF_PIN_R2  , default="GPIO4"):  pins.gpio_output_pin_schema,
+        cv.Optional(CONF_PIN_R2  , default="GPIO04"):  pins.gpio_output_pin_schema,
         cv.Optional(CONF_PIN_G2  , default="GPIO15"): pins.gpio_output_pin_schema,
         cv.Optional(CONF_PIN_B2  , default="GPIO12"): pins.gpio_output_pin_schema,
         cv.Optional(CONF_PIN_A   , default="GPIO26"): pins.gpio_output_pin_schema,
@@ -62,7 +62,7 @@ def to_code(config):
 
     yield cg.register_component(var, config)
     yield display.register_display(var, config)
-    
+
     if CONF_PIN_LATCH in config:
         latch = yield cg.gpio_pin_expression(config[CONF_PIN_LATCH])
         cg.add(var.set_pin_latch(latch))
