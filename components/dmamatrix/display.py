@@ -148,6 +148,6 @@ def to_code(config):
     #     cg.add(var.set_mux_delay(config[CONF_MULTIPLEXER_DELAY]))
 
     # https://github.com/2dom/PxMatrix/blob/master/PxMatrix.h
-    cg.add_library("ESP32-HUB75-MatrixPanel-I2S-DMA", "2.0.6")
+    cg.add_library("mrfaptastic/ESP32 HUB75 LED MATRIX PANEL DMA Display", "2.0.6")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
     cg.add_library("13", "1.10.12")
