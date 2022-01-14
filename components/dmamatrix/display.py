@@ -7,6 +7,8 @@ from esphome.const import CONF_WIDTH, \
     CONF_PIN_A, CONF_PIN_B, CONF_PIN_C, CONF_PIN_D, \
     CONF_CHIPSET, CONF_MULTIPLEXER
 
+DEPENDENCIES = ["i2c"]
+
 pxmatrix_ns = cg.esphome_ns.namespace('dmamatrix_display')
 
 pxmatrix_gpio = pxmatrix_ns.class_('DmaMatrixDisplay', cg.PollingComponent, display.DisplayBuffer)
