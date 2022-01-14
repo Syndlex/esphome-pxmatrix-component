@@ -31,7 +31,7 @@ MatrixPanel_I2S_DMA *dmamatrix = nullptr;
 
 uint16_t myWHITE = dma_display->color565(255, 255, 255);
 
-void display_updater() { dmamatrix->display(); }
+void display_updater() {  }
 
 float dmamatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
 
@@ -59,7 +59,7 @@ void dmamatrixDisplay::setup() {
 
 void HOT dmamatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color, display::ColorOrder::COLOR_ORDER_BGR);
-  this->dma_matrix_->drawPixelRGB565(x, y, matrix_color);
+  this->dma_matrix_->drawPixel(x, y, matrix_color);
 }
 
 void dmamatrixDisplay::fill(Color color) {
