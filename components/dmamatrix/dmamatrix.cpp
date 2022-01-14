@@ -29,7 +29,7 @@ namespace dmamatrix_display {
 
 MatrixPanel_I2S_DMA *dmamatrix = nullptr;
 
-uint16_t myWHITE = dma_display->color565(255, 255, 255);
+
 
 void display_updater() {  }
 
@@ -53,6 +53,7 @@ void dmamatrixDisplay::setup() {
   dmamatrix->begin();
   dmamatrix->setBrightness8(90); //0-255
   dmamatrix->clearScreen();
+  uint16_t myWHITE = dmamatrix->color565(255, 255, 255);
   dmamatrix->fillScreen(myWHITE);
   ESP_LOGI(TAG, "Finished Setup");
 }
