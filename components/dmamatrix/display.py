@@ -150,4 +150,4 @@ def to_code(config):
     # https://github.com/2dom/PxMatrix/blob/master/PxMatrix.h
     cg.add_library("mrfaptastic/ESP32 HUB75 LED MATRIX PANEL DMA Display", "2.0.6")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
-    cg.add_library("13", "1.10.12")
+    cg.add_library("adafruit/Adafruit GFX Library", "1.10.12")
