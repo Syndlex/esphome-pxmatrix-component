@@ -82,8 +82,8 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   InternalGPIOPin *pin_e_{nullptr};
   InternalGPIOPin *pin_oe_{nullptr};
 
-  uint8_t width_ = 32;
-  uint8_t height_ = 32;
+  uint8_t width_ = 64;
+  uint8_t height_ = 64;
   uint8_t brightness_ = 255;
   uint8_t row_pattern_ = 16;
   uint8_t mux_delay_ = 5;
