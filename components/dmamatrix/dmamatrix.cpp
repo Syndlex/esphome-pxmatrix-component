@@ -57,6 +57,20 @@ void HOT DmaMatrixDisplay::display() {}
 
 void dmamatrixDisplay::set_pin_latch(InternalGPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
 
+void dmamatrixDisplay::set_pin_r1(InternalGPIOPin *pin_r1) { this->pin_r1_ = pin_r1; }
+
+void dmamatrixDisplay::set_pin_r2(InternalGPIOPin *pin_r2) { this->pin_r2_ = pin_r2; }
+
+void dmamatrixDisplay::set_pin_g1(InternalGPIOPin *pin_g1) { this->pin_g1_ = pin_g1; }
+
+void dmamatrixDisplay::set_pin_g2(InternalGPIOPin *pin_g2) { this->pin_g2_ = pin_g2; }
+
+void dmamatrixDisplay::set_pin_b1(InternalGPIOPin *pin_b1) { this->pin_b1_ = pin_b1; }
+
+void dmamatrixDisplay::set_pin_b2(InternalGPIOPin *pin_b2) { this->pin_b2_ = pin_b2; }
+
+void dmamatrixDisplay::set_pin_clk(InternalGPIOPin *pin_clk) { this->pin_clk_ = pin_clk; }
+
 void dmamatrixDisplay::set_pin_a(InternalGPIOPin *pin_a) { this->pin_a_ = pin_a; }
 
 void dmamatrixDisplay::set_pin_b(InternalGPIOPin *pin_b) { this->pin_b_ = pin_b; }
@@ -74,8 +88,6 @@ void dmamatrixDisplay::set_width(uint8_t width) { this->width_ = width; }
 void dmamatrixDisplay::set_height(uint8_t height) { this->height_ = height; }
 
 void dmamatrixDisplay::set_brightness(uint8_t brightness) { this->brightness_ = brightness; }
-
-void dmamatrixDisplay::set_driver_chips(DriverChips driver_chips) { this->driver_chips_ = driver_chips; }
 
 int DmaMatrixDisplay::get_width_internal() { return this->width_; }
 
