@@ -1,11 +1,6 @@
 #include "pxmatrix_display.h"
 #include "esphome/core/application.h"
 
-#ifdef ESP8266
-
-#include <Ticker.h>
-
-#endif
 
 static const char *TAG = "pxmatrix_display";
 
@@ -15,15 +10,6 @@ namespace pxmatrix_display {
 
   PxMATRIX *pxMatrix;
 
-  #ifdef ESP32
-  hw_timer_t * timer = NULL;
-  portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
-  #endif
-
-  #ifdef ESP8266
-  Ticker display_ticker;
-  #endif
-
 
 void display_updater() { pxMatrix->display(); }
 
@@ -31,6 +17,14 @@ float PxmatrixDisplay::get_setup_priority() const { return setup_priority::PROCE
 
 void PxmatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
+  HUB75_I2S_CFG mxconfig(
+    PANEL_RES_X,   // module width
+    PANEL_RES_Y,   // module height
+    PANEL_CHAIN    // Chain length
+  );
+
+
+
   this->px_matrix_ = new PxMATRIX(width_, height_, pin_latch_->get_pin(), pin_oe_->get_pin(), pin_a_->get_pin(),
                                   pin_b_->get_pin(), pin_c_->get_pin(), pin_d_->get_pin(), pin_e_->get_pin());
   pxMatrix = this->px_matrix_;
@@ -48,16 +42,6 @@ void PxmatrixDisplay::setup() {
   this->px_matrix_->setFlip(flip_);
   ESP_LOGI(TAG, "Finished Setup");
 
-  #ifdef ESP8266
-    display_ticker.attach(0.007, display_updater);
-  #endif
-
-  #ifdef ESP32
-    timer = timerBegin(0, 80, true);
-    timerAttachInterrupt(timer, &display_updater, true);
-    timerAlarmWrite(timer, 4000, true);
-    timerAlarmEnable(timer);
-  #endif
 
 }
 
