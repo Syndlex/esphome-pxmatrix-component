@@ -1,8 +1,20 @@
 #include "dmamatrix.h"
 #include "esphome/core/application.h"
 
-
-
+#define R1_PIN 17
+#define G1_PIN 2
+#define B1_PIN 16
+#define R2_PIN 4
+#define G2_PIN 15
+#define B2_PIN 12
+#define A_PIN 26
+#define B_PIN 13 
+#define C_PIN 14
+#define D_PIN 27
+#define E_PIN 22
+#define LAT_PIN 33
+#define OE_PIN 32
+#define CLK_PIN 25
 
 static const char *TAG = "dmamatrix_display";
 
@@ -15,10 +27,8 @@ float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROC
 
 void DmaMatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
-  HUB75_I2S_CFG::i2s_pins _pins={
-    pin_r1_->get_pin(), pin_g1_->get_pin(), pin_b1_->get_pin(), pin_r2_->get_pin(), pin_g2_->get_pin(), 
-    pin_b2_->get_pin(), pin_a_->get_pin() , pin_b_->get_pin(), pin_c_->get_pin(), pin_d_->get_pin(), 
-    pin_e_->get_pin() , pin_latch_->get_pin() ,pin_oe_->get_pin() ,pin_clk_->get_pin() };
+  HUB75_I2S_CFG::i2s_pins _pins={R1_PIN, G1_PIN, B1_PIN, R2_PIN, G2_PIN, B2_PIN, A_PIN, B_PIN, C_PIN, D_PIN, E_PIN, LAT_PIN, OE_PIN, CLK_PIN};
+
   ESP_LOGI(TAG, "after pins");
   HUB75_I2S_CFG mxconfig(
       width_,   // module width
@@ -57,33 +67,33 @@ void DmaMatrixDisplay::update() {
 
 void HOT DmaMatrixDisplay::display() {}
 
-void DmaMatrixDisplay::set_pin_latch(IDFInternalGPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
+// void DmaMatrixDisplay::set_pin_latch(IDFInternalGPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
 
-void DmaMatrixDisplay::set_pin_r1(IDFInternalGPIOPin *pin_r1) { this->pin_r1_ = pin_r1; }
+// void DmaMatrixDisplay::set_pin_r1(IDFInternalGPIOPin *pin_r1) { this->pin_r1_ = pin_r1; }
 
-void DmaMatrixDisplay::set_pin_r2(IDFInternalGPIOPin *pin_r2) { this->pin_r2_ = pin_r2; }
+// void DmaMatrixDisplay::set_pin_r2(IDFInternalGPIOPin *pin_r2) { this->pin_r2_ = pin_r2; }
 
-void DmaMatrixDisplay::set_pin_g1(IDFInternalGPIOPin *pin_g1) { this->pin_g1_ = pin_g1; }
+// void DmaMatrixDisplay::set_pin_g1(IDFInternalGPIOPin *pin_g1) { this->pin_g1_ = pin_g1; }
 
-void DmaMatrixDisplay::set_pin_g2(IDFInternalGPIOPin *pin_g2) { this->pin_g2_ = pin_g2; }
+// void DmaMatrixDisplay::set_pin_g2(IDFInternalGPIOPin *pin_g2) { this->pin_g2_ = pin_g2; }
 
-void DmaMatrixDisplay::set_pin_b1(IDFInternalGPIOPin *pin_b1) { this->pin_b1_ = pin_b1; }
+// void DmaMatrixDisplay::set_pin_b1(IDFInternalGPIOPin *pin_b1) { this->pin_b1_ = pin_b1; }
 
-void DmaMatrixDisplay::set_pin_b2(IDFInternalGPIOPin *pin_b2) { this->pin_b2_ = pin_b2; }
+// void DmaMatrixDisplay::set_pin_b2(IDFInternalGPIOPin *pin_b2) { this->pin_b2_ = pin_b2; }
 
-void DmaMatrixDisplay::set_pin_clk(IDFInternalGPIOPin *pin_clk) { this->pin_clk_ = pin_clk; }
+// void DmaMatrixDisplay::set_pin_clk(IDFInternalGPIOPin *pin_clk) { this->pin_clk_ = pin_clk; }
 
-void DmaMatrixDisplay::set_pin_a(IDFInternalGPIOPin *pin_a) { this->pin_a_ = pin_a; }
+// void DmaMatrixDisplay::set_pin_a(IDFInternalGPIOPin *pin_a) { this->pin_a_ = pin_a; }
 
-void DmaMatrixDisplay::set_pin_b(IDFInternalGPIOPin *pin_b) { this->pin_b_ = pin_b; }
+// void DmaMatrixDisplay::set_pin_b(IDFInternalGPIOPin *pin_b) { this->pin_b_ = pin_b; }
 
-void DmaMatrixDisplay::set_pin_c(IDFInternalGPIOPin *pin_c) { this->pin_c_ = pin_c; }
+// void DmaMatrixDisplay::set_pin_c(IDFInternalGPIOPin *pin_c) { this->pin_c_ = pin_c; }
 
-void DmaMatrixDisplay::set_pin_d(IDFInternalGPIOPin *pin_d) { this->pin_d_ = pin_d; }
+// void DmaMatrixDisplay::set_pin_d(IDFInternalGPIOPin *pin_d) { this->pin_d_ = pin_d; }
 
-void DmaMatrixDisplay::set_pin_e(IDFInternalGPIOPin *pin_e) { this->pin_e_ = pin_e; }
+// void DmaMatrixDisplay::set_pin_e(IDFInternalGPIOPin *pin_e) { this->pin_e_ = pin_e; }
 
-void DmaMatrixDisplay::set_pin_oe(IDFInternalGPIOPin *pin_oe) { this->pin_oe_ = pin_oe; }
+// void DmaMatrixDisplay::set_pin_oe(IDFInternalGPIOPin *pin_oe) { this->pin_oe_ = pin_oe; }
 
 void DmaMatrixDisplay::set_width(uint8_t width) { this->width_ = width; }
 
