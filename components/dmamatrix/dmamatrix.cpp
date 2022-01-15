@@ -50,8 +50,6 @@ void DmaMatrixDisplay::setup() {
 
 void HOT DmaMatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color, display::ColorOrder::COLOR_ORDER_BGR);
-
-  ESP_LOGI(TAG, "Draw pixel %d,%d,%d",x, y, matrix_color);
   this->dma_matrix_->drawPixel(x, y, matrix_color);
 }
 
@@ -61,8 +59,6 @@ void DmaMatrixDisplay::fill(Color color) {
 }
 
 void DmaMatrixDisplay::update() {
-
-  ESP_LOGI(TAG, "Update");
   this->do_update_();
 }
 
