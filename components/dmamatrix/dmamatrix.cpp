@@ -19,6 +19,7 @@ void DmaMatrixDisplay::setup() {
     pin_r1_->get_pin(), pin_g1_->get_pin(), pin_b1_->get_pin(), pin_r2_->get_pin(), pin_g2_->get_pin(), 
     pin_b2_->get_pin(), pin_a_->get_pin() , pin_b_->get_pin(), pin_c_->get_pin(), pin_d_->get_pin(), 
     pin_e_->get_pin() , pin_latch_->get_pin() ,pin_oe_->get_pin() ,pin_clk_->get_pin() };
+  ESP_LOGI(TAG, "after pins");
   HUB75_I2S_CFG mxconfig(
       width_,   // module width
       height_,   // module height
