@@ -62,7 +62,7 @@ void DmaMatrixDisplay::fill(Color color) {
 
 void DmaMatrixDisplay::update() {
 
-  ESP_LOGI(TAG, "Draw pixel %d,%d,%d",x, y, matrix_color);
+  ESP_LOGI(TAG, "Update");
   this->do_update_();
 }
 
