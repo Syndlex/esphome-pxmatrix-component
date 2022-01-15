@@ -14,7 +14,7 @@ void display_updater() {  }
 float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
 
 void DmaMatrixDisplay::setup() {
-  ESP_LOGCONFIG(TAG, "Starting setup...");
+  ESP_LOGCONFIG(TAG, "Starting setup... %d", pin_g1_->get_pin());
   HUB75_I2S_CFG::i2s_pins _pins={
     pin_r1_->get_pin(), pin_g1_->get_pin(), pin_b1_->get_pin(), pin_r2_->get_pin(), pin_g2_->get_pin(), 
     pin_b2_->get_pin(), pin_a_->get_pin() , pin_b_->get_pin(), pin_c_->get_pin(), pin_d_->get_pin(), 
