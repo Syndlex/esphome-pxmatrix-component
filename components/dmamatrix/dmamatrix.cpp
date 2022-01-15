@@ -29,10 +29,13 @@ void DmaMatrixDisplay::setup() {
     );
 
   mxconfig.clkphase = false;
- 
+  ESP_LOGI(TAG, "Bevor begin");
+
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dma_matrix_->begin();
+  ESP_LOGI(TAG, "after begin");
   dma_matrix_->setBrightness8(this->brightness_); //0-255
+  ESP_LOGI(TAG, "clear");
   dma_matrix_->clearScreen();
   ESP_LOGI(TAG, "Finished Setup");
 }
