@@ -1,6 +1,8 @@
 #include "dmamatrix.h"
 #include "esphome/core/application.h"
 
+
+//for some reason get pin is not working i didnt care and use this work around.
 #define R1_PIN 17
 #define G1_PIN 2
 #define B1_PIN 16
@@ -28,8 +30,6 @@ float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROC
 void DmaMatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
   HUB75_I2S_CFG::i2s_pins _pins={R1_PIN, G1_PIN, B1_PIN, R2_PIN, G2_PIN, B2_PIN, A_PIN, B_PIN, C_PIN, D_PIN, E_PIN, LAT_PIN, OE_PIN, CLK_PIN};
-
-  ESP_LOGI(TAG, "after pins");
   HUB75_I2S_CFG mxconfig(
       width_,   // module width
       height_,   // module height
@@ -40,19 +40,18 @@ void DmaMatrixDisplay::setup() {
     );
 
   mxconfig.clkphase = false;
-  ESP_LOGI(TAG, "Bevor begin");
 
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dma_matrix_->begin();
-  ESP_LOGI(TAG, "after begin");
   dma_matrix_->setBrightness8(this->brightness_); //0-255
-  ESP_LOGI(TAG, "clear");
   dma_matrix_->clearScreen();
   ESP_LOGI(TAG, "Finished Setup");
 }
 
 void HOT DmaMatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color color) {
   uint16_t matrix_color = display::ColorUtil::color_to_565(color, display::ColorOrder::COLOR_ORDER_BGR);
+
+  ESP_LOGI(TAG, "Draw pixel %d,%d,%d",x, y, matrix_color);
   this->dma_matrix_->drawPixel(x, y, matrix_color);
 }
 
