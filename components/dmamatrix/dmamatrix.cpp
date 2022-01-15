@@ -57,33 +57,33 @@ void DmaMatrixDisplay::update() {
 
 void HOT DmaMatrixDisplay::display() {}
 
-void DmaMatrixDisplay::set_pin_latch(GPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
+void DmaMatrixDisplay::set_pin_latch(IDFInternalGPIOPin *pin_latch) { this->pin_latch_ = pin_latch; }
 
-void DmaMatrixDisplay::set_pin_r1(GPIOPin *pin_r1) { this->pin_r1_ = pin_r1; }
+void DmaMatrixDisplay::set_pin_r1(IDFInternalGPIOPin *pin_r1) { this->pin_r1_ = pin_r1; }
 
-void DmaMatrixDisplay::set_pin_r2(GPIOPin *pin_r2) { this->pin_r2_ = pin_r2; }
+void DmaMatrixDisplay::set_pin_r2(IDFInternalGPIOPin *pin_r2) { this->pin_r2_ = pin_r2; }
 
-void DmaMatrixDisplay::set_pin_g1(GPIOPin *pin_g1) { this->pin_g1_ = pin_g1; }
+void DmaMatrixDisplay::set_pin_g1(IDFInternalGPIOPin *pin_g1) { this->pin_g1_ = pin_g1; }
 
-void DmaMatrixDisplay::set_pin_g2(GPIOPin *pin_g2) { this->pin_g2_ = pin_g2; }
+void DmaMatrixDisplay::set_pin_g2(IDFInternalGPIOPin *pin_g2) { this->pin_g2_ = pin_g2; }
 
-void DmaMatrixDisplay::set_pin_b1(GPIOPin *pin_b1) { this->pin_b1_ = pin_b1; }
+void DmaMatrixDisplay::set_pin_b1(IDFInternalGPIOPin *pin_b1) { this->pin_b1_ = pin_b1; }
 
-void DmaMatrixDisplay::set_pin_b2(GPIOPin *pin_b2) { this->pin_b2_ = pin_b2; }
+void DmaMatrixDisplay::set_pin_b2(IDFInternalGPIOPin *pin_b2) { this->pin_b2_ = pin_b2; }
 
-void DmaMatrixDisplay::set_pin_clk(GPIOPin *pin_clk) { this->pin_clk_ = pin_clk; }
+void DmaMatrixDisplay::set_pin_clk(IDFInternalGPIOPin *pin_clk) { this->pin_clk_ = pin_clk; }
 
-void DmaMatrixDisplay::set_pin_a(GPIOPin *pin_a) { this->pin_a_ = pin_a; }
+void DmaMatrixDisplay::set_pin_a(IDFInternalGPIOPin *pin_a) { this->pin_a_ = pin_a; }
 
-void DmaMatrixDisplay::set_pin_b(GPIOPin *pin_b) { this->pin_b_ = pin_b; }
+void DmaMatrixDisplay::set_pin_b(IDFInternalGPIOPin *pin_b) { this->pin_b_ = pin_b; }
 
-void DmaMatrixDisplay::set_pin_c(GPIOPin *pin_c) { this->pin_c_ = pin_c; }
+void DmaMatrixDisplay::set_pin_c(IDFInternalGPIOPin *pin_c) { this->pin_c_ = pin_c; }
 
-void DmaMatrixDisplay::set_pin_d(GPIOPin *pin_d) { this->pin_d_ = pin_d; }
+void DmaMatrixDisplay::set_pin_d(IDFInternalGPIOPin *pin_d) { this->pin_d_ = pin_d; }
 
-void DmaMatrixDisplay::set_pin_e(GPIOPin *pin_e) { this->pin_e_ = pin_e; }
+void DmaMatrixDisplay::set_pin_e(IDFInternalGPIOPin *pin_e) { this->pin_e_ = pin_e; }
 
-void DmaMatrixDisplay::set_pin_oe(GPIOPin *pin_oe) { this->pin_oe_ = pin_oe; }
+void DmaMatrixDisplay::set_pin_oe(IDFInternalGPIOPin *pin_oe) { this->pin_oe_ = pin_oe; }
 
 void DmaMatrixDisplay::set_width(uint8_t width) { this->width_ = width; }
 
