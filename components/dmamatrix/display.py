@@ -53,7 +53,7 @@ CONFIG_SCHEMA = cv.All(
         # cv.Optional(CONF_PIN_OE  , default="GPIO32"): pins.gpio_output_pin_schema,
         # cv.Optional(CONF_PIN_CLK , default="GPIO25"): pins.gpio_output_pin_schema,
         cv.Optional(CONF_CHIPSET, default="FM6124"): cv.enum(DRIVER_CHIPS),
-     }).extend(cv.polling_component_schema('.5s')),
+     }).extend(cv.polling_component_schema('.1s')),
     cv.has_at_most_one_key(CONF_PAGES, CONF_LAMBDA))
 
 
