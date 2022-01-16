@@ -30,11 +30,6 @@ float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROC
 void DmaMatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
 
-  if(!SPIFFS.begin()){
-        ESP_LOGCONFIG(TAG,"SPIFFS Mount Failed");
-  }
-
-
   HUB75_I2S_CFG::i2s_pins _pins={R1_PIN, G1_PIN, B1_PIN, R2_PIN, G2_PIN, B2_PIN, A_PIN, B_PIN, C_PIN, D_PIN, E_PIN, LAT_PIN, OE_PIN, CLK_PIN};
   HUB75_I2S_CFG mxconfig(
       width_,   // module width
