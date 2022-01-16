@@ -136,8 +136,8 @@ def to_code(config):
         cg.add(var.set_brightness(config[CONF_BRIGHTNESS]))
 
 
+    cg.add_library("adafruit/SD", "0.0.0-alpha+sha.041f788250")
     cg.add_library("Spi", "1.0")
-    cg.add_library("arduino-libraries/SD", "1.2.4")
     cg.add_library("Wire", "1.0")
     cg.add_library("Adafruit BusIO", "1.10.1")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
