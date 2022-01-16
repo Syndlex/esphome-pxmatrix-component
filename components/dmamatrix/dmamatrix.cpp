@@ -31,7 +31,7 @@ void DmaMatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
 
   if(!SPIFFS.begin()){
-        Serial.println("SPIFFS Mount Failed");
+        ESP_LOGCONFIG(TAG,"SPIFFS Mount Failed");
   }
 
 
