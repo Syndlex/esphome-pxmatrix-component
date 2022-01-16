@@ -37,9 +37,9 @@ void DmaMatrixDisplay::setup() {
       1,    // Chain length
       _pins, // pin mapping
       HUB75_I2S_CFG::FM6124,
-      true
     );
 
+  mxconfig.double_buff = true;
   mxconfig.clkphase = false;
 
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
@@ -61,6 +61,7 @@ void DmaMatrixDisplay::fill(Color color) {
 
 void DmaMatrixDisplay::update() {
   this->do_update_();
+  this->dma_matrix_->flipDMABuffer();
 }
 
 void HOT DmaMatrixDisplay::display() {}
