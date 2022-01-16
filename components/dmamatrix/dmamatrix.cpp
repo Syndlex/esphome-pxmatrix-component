@@ -36,7 +36,7 @@ void DmaMatrixDisplay::setup() {
       height_,   // module height
       1,    // Chain length
       _pins, // pin mapping
-      HUB75_I2S_CFG::FM6124,
+      HUB75_I2S_CFG::FM6124
     );
 
   mxconfig.double_buff = true;
@@ -60,8 +60,8 @@ void DmaMatrixDisplay::fill(Color color) {
 }
 
 void DmaMatrixDisplay::update() {
-  this->do_update_();
   this->dma_matrix_->flipDMABuffer();
+  this->do_update_();
 }
 
 void HOT DmaMatrixDisplay::display() {}
