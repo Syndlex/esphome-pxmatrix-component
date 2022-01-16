@@ -20,7 +20,6 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   void setup() override;
   void update() override;
   void fill(Color color) override;
-  void 
 
   // void set_pin_latch(IDFInternalGPIOPin *pin_latch);
   // void set_pin_r1(IDFInternalGPIOPin *pin_r1);
