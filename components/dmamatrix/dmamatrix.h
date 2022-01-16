@@ -6,8 +6,8 @@
 #include "esphome/core/gpio.h"
 #include "esphome/core/color.h"
 #include "esphome/components/display/display_color_utils.h"
-#include "SD_MMC.h"
 
+#include <SD.h>
 #include <ESP32-HUB75-MatrixPanel-I2S-DMA.h>  // NOLINT
 
 namespace esphome {
