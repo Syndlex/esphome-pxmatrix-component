@@ -39,10 +39,6 @@ void DmaMatrixDisplay::setup() {
       HUB75_I2S_CFG::FM6124,
       true
     );
-  
-  if (!SD.begin(4)) {
-    ESP_LOGCONFIG(TAG,"initialization failed!");
-  }
 
   mxconfig.clkphase = false;
 

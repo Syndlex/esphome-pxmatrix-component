@@ -135,8 +135,6 @@ def to_code(config):
     if CONF_BRIGHTNESS in config:
         cg.add(var.set_brightness(config[CONF_BRIGHTNESS]))
 
-
-    cg.add_library("adafruit/SD", "0.0.0-alpha+sha.041f788250")
     cg.add_library("Spi", "1.0")
     cg.add_library("Wire", "1.0")
     cg.add_library("Adafruit BusIO", "1.10.1")
