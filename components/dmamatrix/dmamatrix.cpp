@@ -4,11 +4,11 @@
 
 //for some reason get pin is not working i didnt care and use this work around.
 #define B1_PIN 17
-#define R2_PIN 4
+#define B2_PIN 4
 #define G1_PIN 2
 #define G2_PIN 15
 #define R1_PIN 16
-#define B2_PIN 12
+#define R2_PIN 12
 #define A_PIN 26
 #define B_PIN 13 
 #define C_PIN 14
